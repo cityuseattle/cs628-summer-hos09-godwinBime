@@ -14,6 +14,7 @@ export default function Create(){
         return setForm((prev) => {
             return {...prev, ...value};
         });    
+    }
 
     //This function will handle form submission
     async function onSubmit(e){
@@ -23,7 +24,7 @@ export default function Create(){
         const newPerson = {...form};
 
         await fetch("https://fluffy-yodel-7x9vx9764q52wx77-5050.app.github.dev/record", {
-            method= "POST",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -36,7 +37,6 @@ export default function Create(){
         setForm({name: "", position: "", level: ""});
         navigate("/");
     }
-}
 //The following section will display the form that takes the input from the user
 return(
     <div>
@@ -77,6 +77,6 @@ return(
             </div>
         </form>
     </div>
-);
+    );
 
 }

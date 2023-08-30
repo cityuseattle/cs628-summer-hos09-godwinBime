@@ -26,7 +26,7 @@ export default function RecordList(){
                 return;
             }
             const records = await response.json();
-            setRecords();
+            setRecords(records);
         }
         getRecords();
         return;
@@ -34,7 +34,7 @@ export default function RecordList(){
 
     //This method will delete the records
     async function deleteRecord(id){
-        await fetch('https://fluffy-yodel-7x9vx9764q52wx77-5050.app.github.dev/record/${id}', {
+        await fetch(`https://fluffy-yodel-7x9vx9764q52wx77-5050.app.github.dev/record/${id}`, {
             method: "DELETE"
         });
 

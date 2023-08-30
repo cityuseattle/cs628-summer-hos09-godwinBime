@@ -37,7 +37,7 @@ export default function Edit(){
     //This method will update the state properties
     function updateForm(value){
         return setForm((prev) => {
-            return{...prev, ..value};
+            return{...prev, ...value};
         });
     }
 
@@ -45,7 +45,7 @@ export default function Edit(){
     async function onSubmit(e){
         e.preventDefault();
         const editPerson ={
-            name: from.name,
+            name: form.name,
             position: form.position,
             level: form.level,
         };
