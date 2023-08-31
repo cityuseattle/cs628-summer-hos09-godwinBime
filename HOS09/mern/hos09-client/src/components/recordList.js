@@ -56,7 +56,7 @@ export default function RecordList(){
     return(
         <div>
             <h3>Record List</h3>
-            <table className="table table-stripped" style={{marginTop: 20}}>
+            <table className="table table-striped" style={{marginTop: 20}}>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -65,7 +65,7 @@ export default function RecordList(){
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>{recordList}</tbody>
+                <tbody>{recordList()}</tbody>
             </table>
         </div>
     );

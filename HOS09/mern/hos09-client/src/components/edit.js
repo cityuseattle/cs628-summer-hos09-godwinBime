@@ -51,7 +51,7 @@ export default function Edit(){
         };
 
         //This will send a post request to update the data in the database
-        await fetch(`https://fluffy-yodel-7x9vx9764q52wx77-5050.app.github.dev/record`, {
+        await fetch(`https://fluffy-yodel-7x9vx9764q52wx77-5050.app.github.dev/record/${params.id}`, {
             method: "PATCH",
             body: JSON.stringify(editPerson),
             headers: {
@@ -71,25 +71,25 @@ export default function Edit(){
                     onChange={(e) => updateForm({name: e.target.value})}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="name">Position: </label>
-                    <input type="text" className="form-control" id="position" value={form.positon}
+                    <label htmlFor="position">Position: </label>
+                    <input type="text" className="form-control" id="position" value={form.position}
                     onChange={(e) => updateForm({position: e.target.value})}/>
                 </div>
                     <div className="form-group">
                     <div className="form-check form-check-inline">
-                        <input className="form-chcek-input" type="radio" name="positionOptions"
+                        <input className="form-check-input" type="radio" name="positionOptions"
                         id="positionIntern" value="Intern" checked={form.level === "Intern"}                
                         onChange={(e) => updateForm({level: e.target.value})}/>
                         <label htmlFor="positionIntern" className="form-check-label">Intern</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-chcek-input" type="radio" name="positionOptions"
+                        <input className="form-check-input" type="radio" name="positionOptions"
                         id="positionJunior" value="Junior" checked={form.level === "Junior"}                
                         onChange={(e) => updateForm({level: e.target.value})}/>
                         <label htmlFor="positionJunior" className="form-check-label">Junior</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-chcek-input" type="radio" name="positionOptions"
+                        <input className="form-check-input" type="radio" name="positionOptions"
                         id="positionSenior" value="Senior" checked={form.level === "Senior"}                
                         onChange={(e) => updateForm({level: e.target.value})}/>
                         <label htmlFor="positionSenior" className="form-check-label">Senior</label>
